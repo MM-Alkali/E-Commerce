@@ -1,0 +1,151 @@
+.section {
+    padding: 10rem 0 5rem 0;
+    overflow: hidden;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .title h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .productcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .productitem {
+    position: relative;
+    width: 27rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+
+  .productthumb img {
+    width: 100%;
+    height: 31rem;
+    object-fit: cover;
+    transition: all 500ms linear;
+  }
+
+  .productinfo {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .productinfo span {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .productinfo a {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 1rem;
+    transition: all 300ms ease;
+  }
+  
+  .productinfo a:hover {
+    color: var(--green);
+  }
+
+  .productitem .icons {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+  }
+  
+  .productitem .icons li {
+    background-color: var(--white);
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 2.3rem;
+    cursor: pointer;
+    transition: 300ms ease-out;
+    transform: translateY(20px);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .productitem .icons li:first-child {
+    transition-delay: 0.1s;
+  }
+  
+  .productitem .icons li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  .productitem .icons li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  .productitem:hover .icons li {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .productitem .icons li:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  
+  .productitem .icons li:hover {
+    background-color: var(--green);
+    color: var(--white);
+  }
+  
+  .productitem .overlay {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .productitem .overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms ease-out;
+  }
+
+  .productitem:hover .overlay::after {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .productitem:hover .product-thumb img {
+    transform: scale(1.1);
+  }
+  
+  .productitem .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--green);
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    border-radius: 2rem;
+    font-size: 1.5rem;
+  }
